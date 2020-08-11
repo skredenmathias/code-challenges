@@ -7,9 +7,9 @@ class Solution:
                 
         for i in range(len(nums)):
             element = nums[i]
-            
+            print(i)
             # if element is smaller, go next
-            if element < target:
+            if element < target and i - 1 < len(nums):
                 continue            
                 
             # if element is equal, return it
@@ -18,4 +18,8 @@ class Solution:
             
             # if element is larger, return previous index
             if element > target:
-                return i - 1
+                return i
+            
+            # if target is not in array
+            else:
+                return len(nums)
